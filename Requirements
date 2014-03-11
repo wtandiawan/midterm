@@ -1,3 +1,51 @@
+Instructions:
+
+- go to ...<project on github> ...
+  - fork the project to your personal github account
+  - copy the URL for your fork
+
+  - git clone the project onto your laptop:
+    git clone <ssh you copied> midterm
+
+  - cd midterm
+  - create a new rails project for the midterm directory as follows:
+    -make it a postgresql project if you wish - sqlite3 is fine as well
+    rails new . --skip-test-unit
+      or
+    rails new . --skip-test-unit -d postgresql
+
+  - make your database work
+  - create your database
+    - migrate your database
+      - creates the scema file, even if you don't have migrations yet
+
+  - commit frequently as you work, with meaningful commit messages
+
+  - add the following stanzas to your Gemfile, then bundle
+    - normally you would use their provided generate scripts
+      - don't this time, as specs and features are provided for you
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end
+
+  - reach the point of failing tests, like you saw in project 3
+    - then make all the tests pass, and fulfill the requirements listed below
+  - if you use generator scripts, like scaffold:
+    - ** don't overwrite the provided spec and feature files! **
+
+    - remove any freshly generated helper specs
+      - you'll notice these as causing fresh pending tests
+
+  - push all your changes back to your fork of the project
+  - invite Gautam and bendycode as collaborators on your project
+
 Requirements for your midterm:
 
 - models:
@@ -18,13 +66,14 @@ Requirements for your midterm:
 - no authentication or authorization required for this midterm!
 
 - Style your app with Bootstrap
+  - *** NOTE: no test will prompt you to do this! ***
   - a default bootstrap style is fine
     - as long as nothing is broken
     - and it's not the cardboard, default style
 
 - have a nav bar that links to the index page for each of your classes
-  - link to authors
-  - link to books
+  - link to Authors
+  - link to Books
 
 - application root path points to authors#index
 
@@ -32,7 +81,7 @@ Requirements for your midterm:
   - to select which author the book belongs to by author's name
 
 - book show page shows author name
-- book index page shows author name
+- books index page shows author name
 
 - all tests must pass
 - no deprecation warnings allowed when running "rake"
