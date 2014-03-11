@@ -1,0 +1,39 @@
+Requirements for your midterm:
+
+- models:
+  - Author class
+    - name
+      - required field
+    - genres
+      - required field
+    - has many books
+
+  - Book class
+    - title
+      - required field
+    - review
+      - required field
+    - belongs_to author
+
+- no authentication or authorization required for this midterm!
+
+- Style your app with Bootstrap
+  - a default bootstrap style is fine
+    - as long as nothing is broken
+    - and it's not the cardboard, default style
+
+- have a nav bar that links to the index page for each of your classes
+  - link to authors
+  - link to books
+
+- application root path points to authors#index
+
+- new and edit book forms show a dropdown
+  - to select which author the book belongs to by author's name
+
+- book show page shows author name
+- book index page shows author name
+
+- all tests must pass
+- no deprecation warnings allowed when running "rake"
+  - points will be deducted for every deprecation warning we see when running your tests
