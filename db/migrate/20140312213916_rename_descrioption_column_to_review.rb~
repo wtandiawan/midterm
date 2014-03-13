@@ -1,0 +1,9 @@
+class RenameDescrioptionColumnToReview < ActiveRecord::Migration
+   def self.up
+    rename_column :books, :review, :username
+  end
+
+  def self.down
+    rename_column :books, :username, :name
+  end
+end
