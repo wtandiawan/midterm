@@ -1,8 +1,20 @@
 Midterm::Application.routes.draw do
-  resources :books
-
-  resources :authors
-
+  resources :authors, :books
+  root  'authors#index'
+  #match 'books/new',  to: 'books#new',            via: 'get'
+  #match 'books/show',  to: 'books#show',            via:'get'
+  #match 'books/edit',  to: 'books#edit',            via: 'get'
+  #match 'books/index',  to: 'books#index',            via: 'get'
+  #match 'books/create',  to: 'books#create',            via: 'post'
+  #match 'books/update',  to: 'books#update',            via: 'put'
+  #match 'books/destroy',  to: 'books#destroy',            via: 'delete'
+  #match 'authors/new',  to: 'authors#new',            via: 'get'
+  #match 'authors/show',  to: 'authors#show',            via:'get'
+  #match 'authors/edit',  to: 'authors#edit',            via: 'get'
+  #match '/',  to: 'authors#index',            via: 'get'
+  #match 'authors/create',  to: 'authors#create',            via: 'post'
+  #match 'authors/update',  to: 'authors#update',            via: 'put'
+  #match 'authors/destroy',  to: 'authors#destroy',            via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
